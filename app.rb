@@ -175,11 +175,12 @@ get '/profile/delete/:id' do
     
     user = User.find(params[:id])
     
-#    if entry[:user_id] == session[:user_id]
-#        entries.destroy(user_id)
-#    end
+    #this uses the class in methods.rb and the relation becomes a method
+    user.entries.each do |post|
+       post.destroy 
+    end
     
-    user.destroy()
+    user.destroy
     session[:user_id] = nil
 
     redirect '/'
