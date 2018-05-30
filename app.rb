@@ -73,7 +73,7 @@ end
 
 
 
-THIS IS THE 
+#THIS IS THE ENTRIES REQUESTS AND METHODS
 
 get '/entry/new' do
 	user_id = session[:user_id]
@@ -146,12 +146,51 @@ end
 
 
 
+get '/profile/:id' do
+	if session[:user_id].nil?
+		return redirect '/'
+	end
+    
+	@user = User.find(params[:id])
+
+	erb :profile
+end
+
+post '/profile/update/:id' do
+	if session[:user_id].nil?
+		return redirect '/'
+	end
+    
+	user = User.find(params[:id])
+    
+#	user.update(title: params[:title], message: params[:message])
+
+	redirect '/'
+end
+
+get '/profile/delete/:id' do
+	if session[:user_id].nil?
+		return redirect '/'
+	end
+    
+    user = User.find(params[:id])
+    
+#    if entry[:user_id] == session[:user_id]
+#        entries.destroy(user_id)
+#    end
+    
+    user.destroy()
+    session[:user_id] = nil
+
+    redirect '/'
+end
+
 
 
 
 
 
 get '/logout' do
-    session.clear
+    session[:user_id] = nil
     redirect '/'
 end

@@ -4,7 +4,7 @@
     <h1> <%= @user.first_name %> </h1> this is your dashboard!
 
   <p><a href="/entry/new"><input type="button" value="new post"></a></p>
-   
+   <p><a href="/profile/<%= @user.id %>"><input type="button" value="Profile"></a></p>
     <p><a href="/logout"><input type="button" value="logout"></a></p>
 
 <div>
