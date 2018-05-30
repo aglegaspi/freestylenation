@@ -65,7 +65,7 @@ get('/dashboard') do
 		return redirect '/'
 	end
     
-    @entry = Entry.all
+    @entries = Entry.all
     
 	@user = User.find(user_id)
 	erb :dashboard
@@ -73,7 +73,7 @@ end
 
 
 
-
+THIS IS THE 
 
 get '/entry/new' do
 	user_id = session[:user_id]
@@ -96,34 +96,46 @@ post '/entry/create' do
 end
 
 get '/entry/edit/:id' do
-	user_id = session[:user_id]
-	if user_id.nil?
+	if session[:user_id].nil?
 		return redirect '/'
 	end
     
 	@entry = Entry.find(params[:id])
+    
+    if session[:user_id] != @entry.user_id
+        return redirect '/dashboard'
+    end
 
 	erb :edit
 end
 
 post '/entry/update/:id' do
-	user_id = session[:user_id]
-	if user_id.nil?
+	if session[:user_id].nil?
 		return redirect '/'
 	end
     
 	entry = Entry.find(params[:id])
+    
+    if session[:user_id] != entry.user_id
+        return redirect '/dashboard'
+    end
+    
 	entry.update(title: params[:title], message: params[:message])
 
 	redirect '/'
 end
 
 get '/entry/delete/:id' do
-	user_id = session[:user_id]
-	if user_id.nil?
+	if session[:user_id].nil?
 		return redirect '/'
 	end
+    
     entry = Entry.find(params[:id])
+    
+    if session[:user_id] != entry.user_id
+        return redirect '/dashboard'
+    end
+    
     entry.destroy()
 
     redirect '/'
