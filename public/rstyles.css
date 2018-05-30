@@ -41,9 +41,9 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    background-color: #f79b57;
+    background-color: ;
     width: 100%;
-    height: 83px;
+    height: 10px;
 }
 
 .logo {
@@ -51,33 +51,38 @@ body {
     width: 100%;
     font-family: 'Teko', sans-serif;
     font-size: 50px;
-    margin: 0;
-    padding: 0;
-    background-color: #f79b57;
+    padding: 0 0 0 30px;
+    background-color: #e00d9d;
 }
 
 
 /*JOD SECTION inspiration http://matthewvernon.co/*/
-.jod {
-    margin: auto;
-    width: 400px;
-    height: 400px;
+
+#jod {
+    max-width: 350px;
+    margin-top: 100px;
+    position: relative;
+    margin-left:auto; 
+    margin-right: 30px;
 }
 
-#j_o_d {
-    margin: auto;
-    max-width: 400px;
-    margin-top: 100px;
-    position: relative; }
 
-#hero .jod-img {
+.jodrmx {
+    margin: auto;
+    width: 350px;
+    height: 350px;
+}
+
+
+#jod .jod-img {
     width: 100%;
     content: "";
     position: absolute;
-    max-height: 400px; 
+    max-height: 350px; 
 }
 
-#j_o_d .available-img {
+
+#jod .available-img {
     position: absolute;
     top: -70px;
     left: -65px;
@@ -100,3 +105,23 @@ body {
     transform: rotate(360deg); } }
 
 
+.signup_contents {
+    width: 50%;
+    background-color: rgba(255,255,255,0.5);
+    margin: 20px;
+    padding: 20px;
+}
+
+.login_contents {
+    width: 50%;
+    background-color: rgba(255,255,255,0.5);
+    margin: 20px;
+    padding: 20px;
+}
+
+.login_container {
+    width: 50%;
+    background-color: rgba(255,255,255,0.5);
+    margin: 20px;
+    padding: 20px;
+}

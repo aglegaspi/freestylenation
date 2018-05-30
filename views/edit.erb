@@ -1,0 +1,9 @@
+<div class="signup_contents">
+<form action="/entry/update/<%= @entry.id %>" method="POST">
+    <p>Title: <input type="text" name="title" value="<%= @entry.title %>"></p>
+    
+    <p>Contents: <textarea rows="4" cols="50" name="message"><%= @entry.message %></textarea></p>
+    
+    <p><input type="submit" value="Submit"></p>
+</form>
+</div>

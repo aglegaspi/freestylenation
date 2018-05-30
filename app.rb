@@ -2,38 +2,144 @@ require 'sinatra'
 require 'mailgun'
 require './models'
 
+set :session_secret, ENV['RUMBLR_SESSION_SECRET']
+enable :sessions
+
+#get('/') do
+#	erb :index
+#end
 
 get '/' do
-#	@todos = Todo.all
-	erb :index
+    if session[:user_id]
+        redirect '/dashboard'
+    else
+        redirect '/login'
+    end
 end
-#
-#get '/todo/new' do
-#	erb :new
-#end
-#
-#post '/todo/create' do
-#	Todo.create(name: params[:name], description: params[:description])
-#
-#	redirect '/'
-#end
-#
-#get '/todo/edit/:id' do
-#	@todo = Todo.find(params[:id])
-#
-#	erb :edit
-#end
-#
-#post '/todo/update/:id' do
-#	todo = Todo.find(params[:id])
-#	todo.update(name: params[:name], description: params[:description])
-#
-#	redirect '/'
-#end
-#
-#get '/todo/delete/:id' do
-#    todo = Todo.find(params[:id])
-#    todo.destroy()
-#
-#    redirect '/'
-#end
+
+
+get('/signup') do
+	erb :signup
+end
+
+post('/signup') do
+	existing_user = User.find_by(email: params[:email])
+	if existing_user != nil
+		return redirect '/login'
+	end
+
+	user = User.create(
+		first_name: params[:f_name],
+  		last_name: params[:l_name],
+  		email: params[:email],
+  		password: params[:password],
+	)
+	session[:user_id] = user.id
+	redirect '/dashboard'
+end
+
+get('/login') do 
+	erb :login	
+end
+
+post('/login') do
+	user = User.find_by(email: params[:email])
+	if user.nil?
+        puts "Invalid UN: #{params[:email]}"
+		return redirect '/login'
+	end
+
+	unless user.password == params[:password]
+        puts "Invalid PW: #{params[:password]}, expected: #{user.password}"
+		return redirect '/login'
+	end
+
+	session[:user_id] = user.id
+	redirect '/dashboard'
+end
+
+
+get('/dashboard') do
+	user_id = session[:user_id]
+	if user_id.nil?
+		return redirect '/'
+	end
+    
+    @entry = Entry.all
+    
+	@user = User.find(user_id)
+	erb :dashboard
+end	
+
+
+
+
+
+get '/entry/new' do
+	user_id = session[:user_id]
+	if user_id.nil?
+		return redirect '/'
+	end
+    
+	erb :new
+end
+
+post '/entry/create' do
+	user_id = session[:user_id]
+	if user_id.nil?
+		return redirect '/'
+	end
+    
+	Entry.create(title: params[:title], message: params[:message], user_id: session[:user_id])
+
+	redirect '/'
+end
+
+get '/entry/edit/:id' do
+	user_id = session[:user_id]
+	if user_id.nil?
+		return redirect '/'
+	end
+    
+	@entry = Entry.find(params[:id])
+
+	erb :edit
+end
+
+post '/entry/update/:id' do
+	user_id = session[:user_id]
+	if user_id.nil?
+		return redirect '/'
+	end
+    
+	entry = Entry.find(params[:id])
+	entry.update(title: params[:title], message: params[:message])
+
+	redirect '/'
+end
+
+get '/entry/delete/:id' do
+	user_id = session[:user_id]
+	if user_id.nil?
+		return redirect '/'
+	end
+    entry = Entry.find(params[:id])
+    entry.destroy()
+
+    redirect '/'
+end
+
+
+
+
+
+
+
+
+
+
+
+get '/logout' do
+    session.clear
+    redirect '/'
+end
