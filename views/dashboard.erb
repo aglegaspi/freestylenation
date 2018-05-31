@@ -1,58 +1,76 @@
-
-<div class="login_container">
-   
-    <h1> <%= @user.first_name %> </h1> this is your dashboard!
-
-  <p><a href="/entry/new"><input type="button" value="new post"></a></p>
-   <p><a href="/profile/<%= @user.id %>"><input type="button" value="Profile"></a></p>
-    <p><a href="/logout"><input type="button" value="logout"></a></p>
-
-<div>
-	<div>
-		<h3 class="text-center">Bulletin Board</h3>
-	</div>
+<div class="col-xs-6 col-md-2">
+<a href="/profile/<%= @user.id %>">
+    <button type="button" class="btn btn-outline-success">Profile</button></a>
+    <a href="/logout"><button type="button" class="btn btn-outline-danger">Log out</button></a>
 </div>
+</div> <!--this DIV must remain for code to work-->
 
-	<% if @entries.empty? %>
-	<div>
-		<div>
-			<p>
-				Looks like you haven't created any entries yet. Get started today by 
-				<a href="/entry/new">creating your first one</a>
-			</p>		
-		</div>
-	</div>
-	<% else %>
+<div id="dashboard_bg">
+</div>
+   
+<!--
+<div id="skrollr-body">
+<div id="parallax-banner">
+ 
+-->
+  
+<!--<div class="banner" id="parallax-layer1" data-0="top:0%;" data-804="top:60%;"></div>  img/parallax/parallax_v38_BG00.png Background: Hills, Train -->
+  
+<!--<div class="banner" id="parallax-layer2" data-0="top:0%;" data-704="top:20%;"></div> -->
+ <!-- img/parallax/parallax_v38_MG00.png Mid-ground: Hills, Valley -->
+  
+<!-- <div class="banner" id="parallax-layer3" data-0="top:0%;" data-904="top:75%;"></div>   -->
+<!-- 		img/parallax/parallax_v38_FG01.png Foreground: cornfield, telegraph poles -->
+  
+<!--<div class="banner" id="parallax-layer3"></div> 			-->
+ <!-- img/parallax/parallax_v38_FG00.png Foreground: blue fence and grass. -->
+  
+<!-- data-604 = scroll target for parallax motion. eg: @604px parallax-layer1 will have moved 50% of vertical scroll. No Parallax motion on parallax-layer4  -->
+   
+
+<div class=“contents_forall”>
+<h1> <%= @user.first_name %> <small>time for a </small>
+    <a href="/entry/new"><button type="button" class="btn btn-primary">New Post</button></a></h1>
+<% if @entries.empty? %>
+<p>
+If you are not seeing any posts. Contact <a href=“mailto:lex83nyc@gmail.com”>Lex</a> ASAP!
+</p>		
+<% else %>
+  
+<h3>Latest Posts</h3>
+
+        <% @entries.each do |entry| %>
+        <div class="col-xs-8 col-sm-6 col-md-6 form_remix">
+        <span class="nickname_display"><%= entry.user.nickname %></span>
+        <br>
+        <span class="title_display"><%= entry.title %></span>
+        <br>
+        <span class="message_display"><%= entry.message %></span>
+
+        <% if entry.user_id == session[:user_id] %>
         <div>
-        <div>
-            <h3>Your thoughts count!</h3>
-            <p>Submit an entry.</p>
-            <p>
-            <a href="/entry/new">Submit a post</a>
-            </p>
+        <small><a href="/entry/edit/<%= entry.id %>">Edit</a>
+        | <a href="/entry/delete/<%= entry.id %>">Delete</a></small>
         </div>
-        <div>
-            <h3>Latest Posts</h3>
-            <ul>
-            <% @entries.each do |entry| %>
-                <li>
-                    <div>
-                        Name: <%= entry.title %>
-                        <br>
-                        Description: <%= entry.message %>
-                    </div>
-                    <% if entry.user_id == session[:user_id] %>
-                    <div>
-                        <a href="/entry/edit/<%= entry.id %>">Edit</a>
-                        <a href="/entry/delete/<%= entry.id %>">Delete</a>	
-                    </div>
-                    <% end %>
-                </li>	
-            <% end %>
-            </ul>
-			</div>
-		</div>		
-	<% end %>
+        
+        <% end %>
+        </div>
+<% end %>
+		
+<% end %>
 	
 </div>
+
+          <!-- Optional: clear the XS cols if their content doesn't match in height -->
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-md-4 hidden-sm hidden-xs">
+            <!--            emtpy-->
+        </div>
+
+
+</div>
+
+
+    
+
 

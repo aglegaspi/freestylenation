@@ -1,0 +1,289 @@
+////// -------------------- LAYOUT ERB ------------------------------- ///////////
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/rstyles.css">
+    <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Raleway|Roboto|Roboto+Mono|Song+Myung|Ubuntu" rel="stylesheet">
+    <title>Freestyle.</title>
+</head>
+<body>
+ 
+  <div class="header">
+    <h1 class="logo">
+    <a href="/">FREESTYLE.</a> 
+    <% if session[:user_id].nil? %>
+        <a href="/login">LOGIN</a> 
+        <a href="/signup">SIGNUP</a>
+    <% end %>
+    </h1>
+   </div>
+   
+    <%= yield %> 
+    
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="/skrollr.js"></script>
+    <script src="/rscripts.js"></script>
+</body>
+</html>
+
+
+
+
+////// -------------------- SIGN UP ERB ------------------------------- ///////////
+
+
+<div class="signup_contents">
+<form action="/signup" method="POST">
+    <p>FIRST NAME: <input type="text" name="f_name" placeholder="First Name"></p>
+    <p>LAST NAME: <input type="text" name="l_name" placeholder="Last Name"></p>
+    <p>NICKNAME: <input type="text" name="nickname" placeholder="Nickname"></p>
+    <p>EMAIL: <input type="text" name="email" placeholder="your@email.address"></p>
+    <p>PASSWORD: <input type="text" name="password" placeholder="Password"></p>
+    <p><input type="submit" value="sign up"></p>
+</form>
+</div>
+
+
+
+
+
+////// -------------------- LOGIN UP ERB ------------------------------- ///////////
+
+<div class="fullscreen-bg">
+    <video loop muted autoplay poster="https://j.gifs.com/pQjEym.gif" class="fullscreen-bg__video">
+    <source src="/videos/lisa_lisa-i_wonder_edit.mp4" type="video/mp4">
+    <source src="video/big_buck_bunny.webm" type="video/webm">-->
+    <source src="video/big_buck_bunny.ogv" type="video/ogg">-->
+    </video>
+</div>
+
+<section id="jod">
+<div class="jod-img">
+<img class="jodrmx" src="/images/artwork/lisa_lisa_-_i_wonder_if.jpg" alt=""></div>
+<img src="/images/available.svg" class="available-img">
+</section>
+
+
+
+<div class="login_contents">
+<form action="/login" method="POST">
+    <p>EMAIL: <input type="text" name="email"></p>
+    <p>PASSWORD: <input type="text" name="password"></p>
+    <p><input type="submit" value="login"></p>
+</form>
+<p>Don't have an account. Sign up <a href="/signup">here!</a></p>
+</div>
+
+
+
+
+
+
+
+////// -------------------- DASHBOARD ERB ------------------------------- ///////////
+
+
+<div class="login_container">
+   
+    <h1> <%= @user.first_name %> </h1> this is your dashboard!
+
+  <p><a href="/entry/new"><input type="button" value="new post"></a></p>
+   <p><a href="/profile/<%= @user.id %>"><input type="button" value="Profile"></a></p>
+    <p><a href="/logout"><input type="button" value="logout"></a></p>
+
+<div>
+	<div>
+		<h3 class="text-center">Bulletin Board</h3>
+	</div>
+</div>
+
+	<% if @entries.empty? %>
+	<div>
+		<div>
+			<p>
+				Looks like you haven't created any entries yet. Get started today by 
+				<a href="/entry/new">creating your first one</a>
+			</p>		
+		</div>
+	</div>
+	<% else %>
+  
+            <h3>Latest Posts</h3>
+            <ul>
+            <% @entries.each do |entry| %>
+
+                    <div>
+                        <span class="nickname_display"><%= entry.user.nickname %></span>
+                        <br>
+                        <span class="title_display"><%= entry.title %></span>
+                        <br>
+                        <span class="message_display"><%= entry.message %></span>
+                    </div>
+                    <% if entry.user_id == session[:user_id] %>
+                    <div>
+                        <a href="/entry/edit/<%= entry.id %>">Edit</a>
+                        <a href="/entry/delete/<%= entry.id %>">Delete</a>	
+                    </div>
+                    <% end %>	
+            <% end %>
+            </ul>
+			</div>
+		</div>		
+	<% end %>
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+////// -------------------- PARALLAX CODE IN BETA ------------------------------- ///////////
+
+
+<!-- HTML -->
+<section id="slide-1" class="homeSlide">
+    <div class="bcg"
+        data-center="background-position: 50% 0px;"
+        data-top-bottom="background-position: 50% -100px;"
+        data-anchor-target="#slide-1"
+    >
+        <div class="hsContainer">
+            <div class="hsContent"
+                data-center="opacity: 1"
+                data-106-top="opacity: 0"
+                data-anchor-target="#slide-1 h2"
+            >
+                <h2>Fade out elements before <br>they leave viewport</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HTML -->
+<section id="slide-2">
+    <div class="bcg"
+        data-0="background-color:rgb(1,27,59);"
+        data-top="background-color:(0,0,0);"
+        data-anchor-target="#slide-2"
+    >
+        <div class="hsContainer">
+            <div class="hsContent">
+                <h2
+                    data--200-bottom="opacity: 0"
+                    data-center="opacity: 1"
+                    data-206-top="opacity: 1"
+                    data-106-top="opacity: 0"
+                    data-anchor-target="#slide-2 h2"
+                >
+                    Fade me in and out
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- HTML -->
+<section id="slide-3" class="homeSlide">
+    <div class="bcg"
+        data-center="background-position: 0px 50%;"
+        data-bottom-top="background-position: 0px 40%;"
+        data-top-bottom="background-position: -40px 50%;"
+        data-anchor-target="#slide-3"
+    >
+        <div class="hsContainer">
+            <div class="hsContent">
+                <div class="plaxEl"
+                    data-106-top="opacity: 0"
+                    data-bottom="opacity: 1; position: fixed; top: 206px; width: 100%; left: 0;"
+                    data--30p-top="opacity: 1;"
+                    data--60p-top="opacity: 0;"
+                    data-anchor-target="#slide-3"
+                >
+                    <h2>Fixed element fading in and out</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- HTML -->
+<section id="slide-4" class="homeSlide homeSlideTall">
+    <div class="bcg"
+        data-center="background-position: 50% 0px;"
+        data-bottom-top="background-position: 50% 100px;"
+        data-top-bottom="background-position: 50% -100px;"
+        data-anchor-target="#slide-4"
+    >
+        <div class="curtainContainer">
+            <div class="curtain"
+                data-bottom-top="opacity: 0"
+                data-106-top="height: 1%; top: -10%; opacity: 0;"
+                data-center="height: 100%; top: 0%; opacity: 0.5"
+                data-anchor-target="#slide-4"
+            ></div>
+            <div class="copy"
+                data-bottom-top="opacity: 0"
+                data--100-bottom="opacity: 0"
+                data--280-bottom="opacity: 1;"
+                data-280-top="opacity: 1;"
+                data-106-top="opacity: 0;"
+                data-anchor-target="#slide-4 .copy"
+            >
+                <h2>Curtain effect while you scroll</h2>
+            </div>
+ 
+        </div>
+    </div>
+</section>
+
+<!-- HTML -->
+<section id="slide-5" class="homeSlide homeSlideTall2">
+    <div class="bcg">&nbsp;</div>
+    <div class="bcg bcg2"
+        data-bottom-top="opacity: 0;"
+        data--33p-top="opacity: 0;"
+        data--66p-top="opacity: 1;"
+        data-anchor-target="#slide-5"
+    >
+        <div class="hsContainer">
+            <div class="hsContent"
+                data-bottom-top="opacity: 0;"
+                data-center="opacity: 1"
+                data-anchor-target="#slide-5"
+            >
+                <h2>Fixed element fading in and out</h2>
+            </div>
+        </div>
+    </div>
+    <div class="bcg bcg3"
+        data-300-bottom="opacity: 0;"
+        data-100-bottom="opacity: 1;"
+        data-anchor-target="#slide-5"
+    >
+        <div class="hsContainer">
+            <div class="hsContent"
+                data-100-bottom="opacity: 0;"
+                data-bottom="opacity: 1;"
+                data-anchor-target="#slide-5"
+            >
+                <h2>The End</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+

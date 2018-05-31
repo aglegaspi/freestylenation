@@ -1,5 +1,24 @@
+<div class="col-xs-6 col-md-2">
+<a href="/profile/<%= @user.id %>">
+    <button type="button" class="btn btn-outline-success">Profile</button></a>
+    <a href="/logout"><button type="button" class="btn btn-outline-dark">Log out</button></a>
+</div>
+</div> <!--this DIV must remain for code to work-->
+
+<div id="profile_bg">
+</div>
+
 <h1>THIS IS YOUR PROFILE <%= @user.first_name %></h1>
 
+   <% @entries.each do |entry| %>
+      <div class="col-xs-8 col-sm-6 col-md-6 form_remix">
+       <p><%= entry.title %></p>
+       <p><%= entry.message %></p>
+       </div>
+   <% end %>
 
-<a href="/profile/delete/<%= @user.id %>"><input type="button" value="Delete Account">
+<a href="/dashboard"><button type="button" class="btn btn-success">Back</button></a>
+
+<a href="/profile/delete/<%= @user.id %>">
+<button type="button" class="btn btn-outline-danger">Delete Account</button>
 </a>

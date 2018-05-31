@@ -1,11 +1,58 @@
-
-   
-<div class="signup_contents">
-<form action="/signup" method="POST">
-    <p>FIRST NAME: <input type="text" name="f_name" placeholder="First Name"></p>
-    <p>LAST NAME: <input type="text" name="l_name" placeholder="Last Name"></p>
-    <p>EMAIL: <input type="text" name="email" placeholder="your@email.address"></p>
-    <p>PASSWORD: <input type="text" name="password" placeholder="Password"></p>
-    <p><input type="submit" value="sign up"></p>
-</form>
+<div class="col-xs-6 col-md-2">
 </div>
+</div>
+ 
+  <div class="row ">
+   
+    <div class="fullscreen-bg">
+        <video loop muted autoplay poster="https://j.gifs.com/pQjEym.gif" class="fullscreen-bg__video">
+        <source src="/videos/ss_hooked_on_you.mp4" type="video/mp4">
+        </video>
+    </div>
+               
+            
+    <div class="col-xs-8 col-sm-6 col-md-6 form_remix">
+            
+        <p class="lead">
+            Sign up. Get Full Access.
+        </p>
+            
+                <form action="/signup" method="POST" class="form-inline">
+                
+                <div class="form-group">
+                <label class="sr-only" for="First Name">Nickname</label>
+                <input name="first_name" type="text" class="form-control input-lg" placeholder="First Name">
+                </div>
+                  
+                <div class="form-group">
+                <label class="sr-only" for="Last Name">Nickname</label>
+                <input name="last_name" type="text" class="form-control input-lg" placeholder="Last Name">
+                </div>
+                
+                <div class="form-group">
+                <label class="sr-only" for="Nickname">Nickname</label>
+                <input name="nickname" type="text" class="form-control input-lg" placeholder="Nickname">
+                </div>
+                 
+                <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                <input name="email" type="email" class="form-control input-lg" placeholder="Email">
+                </div>
+                  
+                <div class="form-group">
+                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                <input name="password" type="password" class="form-control input-lg" placeholder="Password">
+                </div>
+    
+                <button type="submit" class="btn btn-success">Sign Up</button>
+                  
+                </form>
+                
+
+        </div>
+          <!-- Optional: clear the XS cols if their content doesn't match in height -->
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-md-4 hidden-sm hidden-xs">
+            <!--            emtpy-->
+        </div>
+    </div>

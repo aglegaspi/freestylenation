@@ -5,6 +5,7 @@ class CreateUsersTable < ActiveRecord::Migration[5.2]
   		user.string :last_name
   		user.string :email
   		user.string :password
+        user.string :nickname
   	end
   end
 end

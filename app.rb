@@ -29,8 +29,9 @@ post('/signup') do
 	end
 
 	user = User.create(
-		first_name: params[:f_name],
-  		last_name: params[:l_name],
+		first_name: params[:first_name],
+  		last_name: params[:last_name],
+        nickname: params[:nickname],
   		email: params[:email],
   		password: params[:password],
 	)
@@ -38,9 +39,14 @@ post('/signup') do
 	redirect '/dashboard'
 end
 
+
 get('/login') do 
+    if session[:user_id] == true
+		return redirect '/dashboard'
+	end
 	erb :login	
 end
+
 
 post('/login') do
 	user = User.find_by(email: params[:email])
@@ -65,8 +71,7 @@ get('/dashboard') do
 		return redirect '/'
 	end
     
-    @entries = Entry.all
-    
+    @entries = Entry.last(20)
 	@user = User.find(user_id)
 	erb :dashboard
 end	
@@ -120,7 +125,7 @@ post '/entry/update/:id' do
         return redirect '/dashboard'
     end
     
-	entry.update(title: params[:title], message: params[:message])
+	entry.update( title: params[:title], message: params[:message])
 
 	redirect '/'
 end
@@ -144,7 +149,7 @@ end
 
 
 
-
+#THESE ARE THE PROFILE REQUESTS AND METHODS
 
 get '/profile/:id' do
 	if session[:user_id].nil?
@@ -152,6 +157,8 @@ get '/profile/:id' do
 	end
     
 	@user = User.find(params[:id])
+    
+    @entries = Entry.where(user_id: params[:id])
 
 	erb :profile
 end
