@@ -1,4 +1,3 @@
-
 .header {
   background-color: #f0ad4e;
 }
@@ -198,10 +197,6 @@
       }
     }
 
-
-
-
-
 .parallax-overlay {
 position: absolute;
 width: 100%;
@@ -210,5 +205,13 @@ z-index: 3;
 overflow: scroll;
  }
 
+.post_parallax {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    background-color: black;
+}
 
-
+.entries_container {
+    margin: 30px;
+}
