@@ -1,0 +1,180 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nytmm_icons{display:inline-block;overflow:hidden;background-repeat:no-repeat;background-image:url('http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/nytmm_icons.png?$TexturePacker:SmartUpdate:6345c94dbfe0c0eda524f9adf2001208:1/1$')}
+
+.nytmm_retina .nytmm_icons{background-image:url('http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/nytmm_icons@2x.png?$TexturePacker:SmartUpdate:6345c94dbfe0c0eda524f9adf2001208:1/1$');background-size:207px 132px}
+
+.nytmm_icons.mma_vert-rule{width:1px;height:120px;background-position:-6px -6px}
+
+.nytmm_icons.nameplate{width:190px;height:27px;background-position:-11px -6px}
+
+.nytmm_icons.logo{width:128px;height:18px;background-position:-11px -37px}
+
+.nytmm_icons.share_white{width:17px;height:14px;background-position:-143px -37px}
+
+.nytmm_icons.mma_audio{width:16px;height:16px;background-position:-164px -37px}
+
+.nytmm_icons.comment_white{width:14px;height:14px;background-position:-143px -55px}
+
+.nytmm_icons.tlogo{width:13px;height:18px;background-position:-184px -37px}
+
+.nytmm_icons.play_hover{width:9px;height:10px;background-position:-161px -57px}
+
+.nytmm_icons.play_default{width:9px;height:10px;background-position:-174px -59px}
+
+.nytmm_icons.pause_hover{width:9px;height:10px;background-position:-161px -71px}
+
+.nytmm_icons.pause_default{width:9px;height:10px;background-position:-187px -59px}body>img{position:absolute !important;width:0 !important;height:0 !important;overflow:hidden}.clearfix:before,.clearfix:after{content:" ";display:table}
+
+.clearfix:after{clear:both}
+
+.wf-loading .fullBleed h1,.wf-loading .fullBleed h5,.wf-loading cite{visibility:hidden}
+
+
+.nytmm_legacyDesktop .fullBleed h1,.nytmm_legacyDesktop .fullBleed h5,.nytmm_legacyDesktop cite{visibility:visible}@font-face{font-family:"House Slant";src:url('http://graphics8.nytimes.com/packages/flash/multimedia/bundles/projects/2013/MMADeploy/HouseSlant.eot');src:url("http://graphics8.nytimes.com/packages/flash/multimedia/bundles/projects/2013/MMADeploy/HouseSlant.eot?#iefix") format("embedded-opentype"),url("http://graphics8.nytimes.com/packages/flash/multimedia/bundles/projects/2013/MMADeploy/HouseSlant.woff") format("woff");font-style:normal;font-weight:400;font-stretch:normal}
+
+#guides{position:fixed;left:0;right:0;top:0;bottom:0}#guides>.guides_center{width:1010px;margin:0 auto}
+
+#guides>.guides_center>div:first-child{border-left:1px solid pink}
+
+#guides>.guides_center>div{float:left;width:167px;height:1000px;border-right:1px solid pink}
+
+#guides>.guides_center>div>span{display:block;width:83px;height:1000px;border-right:1px dashed pink}
+
+#guides>.guides_trigger{position:absolute;border-top:1px dashed lightblue;width:100%;height:2px;top:50%}#guides.ipad{position:fixed;left:0;right:0;top:0;bottom:0}
+
+#guides.ipad>.guides_center{width:770px;margin:0 auto}
+
+#guides.ipad>.guides_center>div{float:left;width:127px;height:1000px;border-right:1px solid pink}
+
+#guides.ipad>.guides_center>div>span{display:block;width:63px;height:1000px;border-right:1px dashed pink}
+
+#guides.ipad>.guides_trigger{position:absolute;border-top:1px dashed lightblue;width:100%;height:2px;top:50%}
+
+
+
+#skrollr-body{
+    position:relative;
+    margin:0;
+    overflow-x:hidden;
+    min-height:1000px}
+
+
+
+
+.nytmm_colorchange{position:absolute;width:8px;min-height:8px;background-color:#3c4966;border-radius:999px;visibility:hidden}
+
+.nytmm_debug .nytmm_colorchange{visibility:visible}
+
+#skrollr-body .nytmm_trigger{min-width:10px}
+
+#nytmm_backdrop{position:fixed;top:0;left:0;bottom:0;right:0;z-index:0}
+
+#nytmm_nav{position:fixed;overflow:hidden;top:0;left:0;width:100%;z-index:2000;-webkit-transition:top .6s ease-in-out;-moz-transition:top .6s ease-in-out;-o-transition:top .6s ease-in-out;transition:top .6s ease-in-out;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0)}
+
+#nytmm_nav 
+.nytmm_chapterNav{width:100%}
+
+#nytmm_nav .nytmm_navbar{overflow:hidden;background:url(http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/blacktile-trans.png) repeat scroll 0 0 transparent;color:#FFF;height:40px}
+
+#nytmm_nav .nytmm_branding{float:left;height:20px;padding:4px 0 0 30px}
+
+.nytmm_branding .tlogo{display:none}
+
+#nytmm_nav .nytmm_branding .logo{margin-top:7px}#nytmm_nav #nytmm_chapterDisplay a{text-decoration:none;height:20px;float:left;margin:11px 2px 0 15px;padding-left:15px;font:200 11px/20px "nyt-cheltenham",Georgia,"Times New Roman",serif;border-left:1px solid #444;text-transform:uppercase;letter-spacing:1px;color:#e2e2e2}.nytmm_cinemaPlaying #nytmm_nav{top:-100px}#nytmm_share{cursor:pointer;height:22px;overflow:hidden;float:right;border-radius:3px;padding:3px 7px 3px 7px;margin:5px 8px 0 0}#nytmm_share:hover{background-color:#333}#nytmm_share_lede li span{color:#fff;color:rgba(255,255,255,0.8);padding:4px 9px 4px 9px;border-radius:3px;font-size:15px;line-height:20px;font-style:normal;font-weight:300;text-transform:none;width:70px;margin-top:10px}#nytmm_share_lede li span:hover{background-color:rgba(255,255,255,.1)}.share .shareToolsList{margin-bottom:0}.share .shareToolsItem span{width:65px;text-transform:uppercase;position:relative;font:200 11px/22px nyt-franklin,Arial,Helvetica,sans-serif;letter-spacing:1px;color:#e2e2e2;height:22px;display:block;cursor:pointer}.share .shareToolsItem span:before{content:"";display:block;float:left;margin-top:4px;margin-right:6px;overflow:hidden;background-repeat:no-repeat;background-image:url('http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/Jockey/nytmm_icons.png?$TexturePacker:SmartUpdate:a784ae960cf7770e0993325720d4bf2a:1/1$');width:17px;height:14px;background-position:-133px -133px}.nytmm_retina .share .shareToolsItem span:before{background-image:url('http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/Jockey/nytmm_icons@2x.png?$TexturePacker:SmartUpdate:dd21b9596f625af71839035ec492559b:1/1$');background-size:182px 182px}html{height:100%}body{font-family:'nyt-franklin',arial,helvetica,sans-serif;font-style:normal;font-weight:300;font-size:15px;line-height:20px;color:#000;height:100%}body.grid{background:#fff url(http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/grid.png) center top repeat-y}.fullBleed{position:relative;display:block;float:left;width:100%;height:100%;margin-bottom:30px;overflow:hidden}.fullBleed div.wrap{position:relative;text-align:center;height:100%;overflow:hidden}.fullBleed div.wrap header{position:absolute;z-index:1;height:50px;top:20px;left:0;right:0;width:90%;margin:0 auto;background:url(http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/rule_white.png) 0 bottom repeat-x}.fullBleed h1,.fullBleed h5{text-align:left;width:90%;margin:0 auto;position:absolute;left:0;right:0}.fullBleed h1{top:100px}.fullBleed h5{top:175px}.wrap{position:relative}.wrap>img{width:100%}.fullBleed#second div.wrap img{margin:0}header p.share{margin:0;float:right}div.cite{position:absolute;display:block;width:90%;left:0;right:0;text-align:left;bottom:50px;margin:0 auto}cite{background:url(http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/yellowtile.jpg) repeat scroll 0 0 #fff7ae;padding:10px;border:2px #000 solid}#g-mourners-timelines+div.cite{text-align:right}#g-rob div.cite{bottom:inherit;width:945px;top:50px;text-align:right}#nytmm_credits div.cite{text-align:right}#g-hide div.cite{bottom:inherit;top:50px;text-align:left;width:80%}#nytmm_credits{margin-top:60px;margin-bottom:0}div.body_text{position:relative;clear:both;width:90%;margin:0 auto}div.body_text:after{content:'';height:0;visibility:hidden;display:block;clear:both}div.body_text p{font:18px/30px Georgia,Times,serif;margin:0 auto 20px auto}div.body_section{margin-bottom:30px;padding-top:60px}div.body_section.section_1{padding-top:30px;background-image:none}.inline-image{display:block;overflow:hidden;margin-bottom:20px}.inline-image img{width:100%;height:100%}#nytmm_audiobook_fixie{position:absolute;width:945px;margin:0 auto;top:50px;padding-top:46px}.download_audio{display:none;position:absolute;width:162px;right:0}.nytmm_legacyDesktop .download_audio{display:block}.download_audio:before{content:"";float:left;width:1px;min-height:243px;margin:0 20px 0 0;display:inline-block;overflow:hidden;background-repeat:repeat-y;background-image:url('http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/mma_vert-rule.png');background-position:0 0}#nytmm_credits{background:url(http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/blacktile-trans.png) repeat scroll 0 0 #333}#nytmm_credits .credits{width:90%;margin:80px auto 80px auto;max-width:561px}.nytmm_legacyDesktop div.body_text>p,.nytmm_legacyDesktop div.body_text>h2{width:561px}@media only screen and (min-width:620px){div.body_text>p,div.body_text>h2{width:561px}}@media only screen and (min-width:960px){.fullBleed h1,.fullBleed h5,.fullBleed div.wrap header,.fullBleed div.cite,div.body_text{width:945px}.download_audio{display:block}.inline-image{width:753px;margin:0 0 20px 192px}.inline-image.inline-left{margin-left:0}#nytmm_credits .credits{width:755px;max-width:inherit;padding-right:190px}}header h2{float:left;display:block;text-indent:-9999px;margin:14px 0 0 0}.fullBleed h1{color:#fff;font:67px/80px "nyt-cheltenham",Times,Georgia,serif;font-style:normal;font-weight:200}
+
+.fullBleed h5,.fullBleed cite,.g-cinema cite{font:12px/20px "lint-mccree","Comic Sans MS","Marker Felt Thin",cursive;font-style:normal;font-weight:400;letter-spacing:1px;color:#fff;color:rgba(255,255,255,0.8)}.fullBleed cite,.g-cinema cite{color:#000;color:rgba(0,0,0,0.8);font-style:italic}.fullBleed h5 *{display:block;float:left;margin-right:8px}
+
+.fullBleed strong{color:#fff;font-size:11px;font-style:italic}.fullBleed cite span{color:#000;color:rgba(0,0,0,0.8)}.fullBleed cite strong{color:#000}div.download_audio p{color:#9d9d9d;font:200 15px/20px nyt-franklin,Arial,Helvetica,sans-serif;margin:0}div.download_link li{margin-top:10px}
+
+div.download_audio li a{color:#5f849f}div.download_link li:hover a{text-decoration:underline}
+
+div.download_audio p a{color:inherit;text-decoration:underline;-webkit-transition:color .3s ease;-o-transition:color .3s ease;-ms-transition:color .3s ease;transition:color .3s ease}
+
+div.download_audio p a:hover,div.download_audio p a:active{color:#5f849f}.body_text h5{display:none}
+
+.body_text h2,#nytmm_credits h6{margin:0 auto 40px auto;font-family:nyt-franklin,Arial,Helvetica,sans-serif;font-style:normal;text-transform:uppercase;font-size:15px;font-weight:700;letter-spacing:1px}
+
+.body_text h2 span,#nytmm_credits h6 span{padding-bottom:3px;border-bottom:2px solid #000}
+
+#nytmm_credits h6 span{border-color:#d1d1d1}.body_text h2+p:first-letter ,.body_text .download_audio+p:first-letter {display:block;float:left;width:20px;color:#fff;font-family:"House Slant",script;text-rendering:optimizeLegibility;font-weight:normal;font-size:45px;line-height:30px;margin:11px 0 0 -80px;padding:16px 22px;text-align:center;background:url(http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/blacktile.jpg) repeat scroll 0 0 #333}
+
+.body_text.section_2 p:first-child:first-letter {background-position:0 -70px}
+
+.body_text blockquote:before{content:"";display:block;position:relative;top:-12px;background:url(http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/blacktile.jpg) repeat scroll 0 0 transparent;width:329px;height:4px}
+
+.body_text blockquote{font:18px/35px "lint-mccree","Comic Sans MS","Marker Felt Thin",cursive;letter-spacing:1px;text-align:right;display:block;float:left;width:329px;margin:10px 55px 15px 0;padding:19px 0 0 0}
+
+.body_text blockquote strong{font-weight:700;font-style:italic}@media only screen and (max-width:580px){.fullBleed h1{font:45px/47px "nyt-cheltenham",Times,Georgia,serif}.fullBleed h5{top:145px}
+    
+.fullBleed div.cite{display:none}}
+
+#nytmm_credits p{font:200 15px/20px nyt-franklin,Arial,Helvetica,sans-serif;margin-bottom:10px}
+
+#nytmm_credits .credits{color:#adadad}#nytmm_credits .credits span{color:#d1d1d1}
+
+.nytmm_audio_container{margin-top:15px;margin-bottom:17px;overflow:hidden;position:relative}.nytmm_audio_container .nytmm_audio_player{display:inline-block;position:relative;padding:0;border-radius:3px;height:28px;line-height:28px;color:#587f9d;font-family:"nyt-franklin-101202-h02",Arial,sans-serif;font-size:12px;text-align:center;background-color:#eaf2f9;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;-webkit-transition:background-color .3s ease;-o-transition:background-color .3s ease;-ms-transition:background-color .3s ease;transition:background-color .3s ease}.nytmm_audio_container .nytmm_audio_player:hover,.nytmm_audio_container .nytmm_audio_player:active{background-color:#557d9c}
+
+.nytmm_audio_container .nytmm_button_icon{display:block;position:absolute;left:10px;top:9px;width:11px;height:12px;background-repeat:no-repeat;background-image:url('http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/nytmm_icons.png')}
+
+.nytmm_retina .nytmm_audio_container .nytmm_button_icon{background-image:url('http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/nytmm_icons@2x.png');background-size:207px 132px}.nytmm_audio_container.nytmm_notplaying 
+
+.nytmm_button_icon{background-position:-174px -59px}
+
+.nytmm_audio_container.nytmm_notplaying.nytmm_hover .nytmm_button_icon{background-position:-161px -57px}.nytmm_audio_container.nytmm_playing .nytmm_button_icon{background-position:-187px -59px}.nytmm_audio_container.nytmm_playing.nytmm_hover .nytmm_button_icon{background-position:-161px -71px}.nytmm_audio ul{margin:0}.nytmm_audio li{font-family:nyt-franklin,Arial,Helvetica,sans-serif}.nytmm_audio li a{line-height:28px;font-size:15px;padding:3px 9px 3px 25px}
+
+.nytmm_audio_container.nytmm_hover li a,.nytmm_audio_container.nytmm_hover li a{color:#fff}.jp-audio{width:inherit !important}.jp-controls li{min-width:114px}a{text-decoration:none}.g-intro-text,.g-outro-text{font:12px/24px "lint-mccree","Comic Sans MS","Marker Felt Thin",cursive;letter-spacing:1px;display:block;width:90%;max-width:561px;color:rgba(0,0,0,.8)}.g-intro-text{margin:0 auto 40px auto}.g-outro-text{margin:40px auto 0 auto}.g-intro-text strong{font-weight:bold;color:#000}.g-cinema{margin:0 auto;width:100%;position:relative;min-width:768px;max-width:1400px}.g-animation{position:relative}.g-scene{position:relative;width:100%;margin:0 auto}.g-fixed-center{position:relative;width:100%;min-width:768px;max-width:1400px}.g-grid-align{width:945px;margin:0 auto}
+
+
+.g-stack{
+    line-height:0;
+    position:absolute;
+    top:0;
+    overflow:hidden;
+    width:100%}
+
+.g-stack-bg{position:static;overflow:visible}
+
+.g-stack>img{width:100%}
+
+#g-rob-a{width:100%;overflow:hidden;position:relative;margin:0 auto 0}#g-rob-b{width:850px;overflow:hidden;margin-top:20px;position:relative}#g-rob-b img{width:850px}#g-rob-c{width:561px;position:relative;overflow:hidden;margin-top:20px;float:right;clear:both}#g-rob-d{height:574px;width:560px;position:relative;clear:both;top:-100px;overflow:hidden;border:0 solid white}#g-rob-d 
+
+.g-stack{width:560px;height:574px}
+
+
+#g-hide{width:945px}#g-hide-abcd{height:auto}#g-hide-timelines{position:relative;height:auto}#g-wanted-timelines{position:relative;height:auto}#g-hide-a{width:100%;overflow:hidden;position:relative;margin:0 auto 0}#g-hide-c{margin-top:30px;width:100%;overflow:hidden;position:relative}#g-hide-d{margin-top:30px;width:100%;overflow:hidden;position:relative}.nytmm_timeline{position:absolute;min-width:10px;left:0;background-color:rgba(248,208,208,.7);box-shadow:2px 0 2px rgba(0,0,0,.4);z-index:10000;visibility:hidden}.nytmm_debug .nytmm_timeline{visibility:visible}
+
+
+.nytmm_keyframe{
+    position:absolute;
+    min-width:10px;
+    min-height:10px;
+    background-color:red;left:0
+}
+
+
+
+
+
+
+.nytmm_fixedregion{position:absolute;left:-2px;background-color:yellow;min-width:2px !important;border-radius:4px 0 0 4px}.nytmm_timelineBox{position:absolute;width:100%}.nytmm_timelineBox>.nytmm_timeline{top:0;bottom:0}#g-opener-timelines{position:relative;overflow:hidden;margin-bottom:-5%;margin-top:-5%}#g-mourners-timelines{position:relative;overflow:hidden;margin-bottom:-20%}.g-intro-timeline{background-color:rgba(100,200,300,.7);height:300px}#g-rob-a-timelines{position:absolute;top:0;height:5000px}#g-rob .g-animation{height:2920px}#g-rob .g-rule{display:block;float:right;width:364px;position:relative;top:-100px;height:1px;margin:0 auto 30px 20px;background:url(http://graphics8.nytimes.com/packages/images/multimedia/bundles/projects/2013/MMADeploy/rule_black.png) scroll repeat 0 0}.nytmm_ad{width:100%;text-align:center;padding:10px 0 30px 0;position:relative;background:#fff;z-index:1;overflow:hidden}.nytmm_ad .inner_ad{background:#efefef;padding:20px 0 40px 0;position:relative}.nytmm_ad h3{font-weight:300;color:#999;font-size:15px;margin-bottom:15px}.nytmm-enterprise-ads-leaderboard{width:970px;padding:0;height:90px;margin:0 auto}.nytmm_debug #centerline{position:fixed;z-index:20000;top:50%;border-top:1px dashed red;width:100%;opacity:.3}body.grid a#grid_toggle span{display:none}body.grid a#grid_toggle:before{content:"Hide"}a#grid_toggle{display:block;clear:both;font-weight:bold;background:#0f0;padding:16px 20px;margin-top:22px;margin-bottom:17px;z-index:1000;position:fixed;right:0;margin:0}a#grid_toggle:hover{cursor:pointer;text-decoration:underline;border-color:transparent}hr.wipe{border:0;border-bottom:1px #333 solid;margin:53px 0 50px 0;clear:both;height:1px}
