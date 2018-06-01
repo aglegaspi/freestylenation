@@ -287,3 +287,12 @@
 </section>
 
 
+
+
+???????? IMG SRC LINKS FOR PARALLEX ?????
+
+<a href="https://ibb.co/htdqky"><img src="https://preview.ibb.co/bTYO5y/freestyle_collage_01_top.png" alt="freestyle_collage_01_top" border="0"></a>
+<a href="https://ibb.co/csTZCd"><img src="https://preview.ibb.co/nQBXyJ/freestyle_collage_02_bttm.png" alt="freestyle_collage_02_bttm" border="0"></a>
+<a href="https://ibb.co/bXiCyJ"><img src="https://preview.ibb.co/jzF35y/freestyle_collage_03_bttm.png" alt="freestyle_collage_03_bttm" border="0"></a>
+
+

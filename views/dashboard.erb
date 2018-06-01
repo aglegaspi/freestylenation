@@ -4,39 +4,39 @@
     <a href="/logout"><button type="button" class="btn btn-outline-danger">Log out</button></a>
 </div>
 </div> <!--this DIV must remain for code to work-->
+<!--
 
 <div id="dashboard_bg">
 </div>
    
-<!--
+-->
+
 <div id="skrollr-body">
 <div id="parallax-banner">
  
--->
   
-<!--<div class="banner" id="parallax-layer1" data-0="top:0%;" data-804="top:60%;"></div>  img/parallax/parallax_v38_BG00.png Background: Hills, Train -->
+<div class="banner" id="parallax-layer1" data-0="top:0%;" data-804="top:30%;"></div>  
   
-<!--<div class="banner" id="parallax-layer2" data-0="top:0%;" data-704="top:20%;"></div> -->
- <!-- img/parallax/parallax_v38_MG00.png Mid-ground: Hills, Valley -->
+<div class="banner" id="parallax-layer2" data-0="top:0%;" data-704="top:20%;"></div> 
+    
+<div class="banner" id="parallax-layer3"></div> 			
   
-<!-- <div class="banner" id="parallax-layer3" data-0="top:0%;" data-904="top:75%;"></div>   -->
-<!-- 		img/parallax/parallax_v38_FG01.png Foreground: cornfield, telegraph poles -->
-  
-<!--<div class="banner" id="parallax-layer3"></div> 			-->
- <!-- img/parallax/parallax_v38_FG00.png Foreground: blue fence and grass. -->
-  
-<!-- data-604 = scroll target for parallax motion. eg: @604px parallax-layer1 will have moved 50% of vertical scroll. No Parallax motion on parallax-layer4  -->
    
 
 <div class=“contents_forall”>
-<h1> <%= @user.first_name %> <small>time for a </small>
+
+<div class="col-xs-8 col-sm-6 col-md-6 dashboard_welcome">
+    <h1> <%= @user.first_name %> <small>time for a </small>
     <a href="/entry/new"><button type="button" class="btn btn-primary">New Post</button></a></h1>
+</div>
+
 <% if @entries.empty? %>
 <p>
 If you are not seeing any posts. Contact <a href=“mailto:lex83nyc@gmail.com”>Lex</a> ASAP!
 </p>		
 <% else %>
-  
+
+
 <h3>Latest Posts</h3>
 
         <% @entries.each do |entry| %>
