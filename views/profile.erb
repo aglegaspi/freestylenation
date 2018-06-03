@@ -1,24 +1,48 @@
-<div class="col-xs-6 col-md-2">
-<a href="/profile/<%= @user.id %>">
-    <button type="button" class="btn btn-outline-success">Profile</button></a>
-    <a href="/logout"><button type="button" class="btn btn-outline-dark">Log out</button></a>
-</div>
-</div> <!--this DIV must remain for code to work-->
-
 <div id="profile_bg">
 </div>
 
-<h1>THIS IS YOUR PROFILE <%= @user.first_name %></h1>
+<div class="dashboard_row">
+<div class="dashboard_leftcolumn">
 
-   <% @entries.each do |entry| %>
-      <div class="col-xs-8 col-sm-6 col-md-6 form_remix">
-       <p><%= entry.title %></p>
-       <p><%= entry.message %></p>
-       </div>
-   <% end %>
+   <% if @entries.empty? %>
+            <p>
+            Oh? You haven't posted anything yet. 
+            </p>		
+        <% else %>
 
-<a href="/dashboard"><button type="button" class="btn btn-success">Back</button></a>
+           <% @entries.each do |entry| %>
+            <div class="dashboard_card">
+              <h3 class="title_color"><%= entry.title %></h3>
+              <p class="entry_txt_size"><%= entry.message %></p>
+                <h5>Posted by <%= entry.user.nickname %></h5>
+               <p>
+                <% if entry.user_id == session[:user_id] %>
+                <span class="user_post_mods">
+                <a href="/entry/edit/<%= entry.id %>">Edit</a> | <a href="/entry/delete/<%= entry.id %>">Delete</a>
+                </span>
+                <% end %>
+              </p>
+              </div>
+            <% end %>
+            <% end %>
+    </div>
+    
+    <div class="dashboard_rightcolumn">
+         
+          <div class="dashboard_card">
+          <h2>Everything: <%= @user.nickname %>!</h2>
+           
+            <a href="/entry/new"><div class="dashboard_fakeimg" style="height:100px;">NEW POST</div></a>
+            
+            <a href="/dashboard"><div class="dashboard_fakeimg" style="height:100px;">DASHBOARD</div></a>
+            
+            <a href="/logout"><div class="dashboard_fakeimg" style="height:100px;">LOGOUT</div></a>
+            
+             <a href="/profile/delete/<%= @user.id %>"><div class="dashboard_fakeimg" style="height:100px;">DELETE ACCOUNT</div></a>
+             
+        </div>
+        
+    </div>
 
-<a href="/profile/delete/<%= @user.id %>">
-<button type="button" class="btn btn-outline-danger">Delete Account</button>
-</a>
+</div>
+

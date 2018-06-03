@@ -16,10 +16,9 @@
 
            <% @entries.each do |entry| %>
             <div class="dashboard_card">
-              <h2><%= entry.title %></h2>
-              <h5>Posted by: <%= entry.user.nickname %></h5>
-              <p><%= entry.message %></p>
-
+              <h3 class="title_color"><%= entry.title %></h3>
+              <p class="entry_txt_size"><%= entry.message %></p>
+                <h5>Posted by <%= entry.user.nickname %></h5>
                <p>
                 <% if entry.user_id == session[:user_id] %>
                 <span class="user_post_mods">

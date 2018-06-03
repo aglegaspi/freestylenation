@@ -1,29 +1,28 @@
-<div class="col-xs-6 col-md-2">
-</div>
-</div> <!--this DIV must remain for code to work-->
 
 <div id="entry_bg">
 </div>
 
-<div class="col-xs-8 col-sm-6 col-md-6 form_remix">
 
-<form action="/entry/create" method="POST">
+ 
+        
+<div class="modern-form">
+  <h3>New Post. Make It Sweet!</h3>
+
+    <form action="/entry/create" method="POST"> 
     
-<div class="form-group">
-<label for="title">Title:</label>
-<input name="title" type="text" class="form-control" placeholder="Title">
-</div>
-    
-<div class="form-group">
-<label for="comment">Comment:</label>
-<textarea name="message" class="form-control" rows="5" id="comment" placeholder="Your Text Goes Here"></textarea>
-</div>
+    <fieldset class='float-label-field'>
+      <label for="txtTitle">Title</label>
+      <input id="txtTitle" type='text' name="title">
+    </fieldset>
 
-<!--<p><input type="submit" value="Submit"></p>-->
-    <p></p><button type="submit" class="btn btn-primary">Submit</button></p>
-    
-</form>
+    <fieldset class='float-label-field'>
+     <div class="title_font">Message</div>
+      <textarea id="txtName" name="message" class="form-control" rows="5" id="comment" ></textarea>
+    </fieldset>
 
-<a href="/dashboard"><button type="button" class="btn btn-success">Back</button></a>
-
+   <button type="submit" class="btn_rmx">Submit</button>
+    </form>
+    <a href="/dashboard"><button type="button">Back</button></a>
 </div>
+            
+                    

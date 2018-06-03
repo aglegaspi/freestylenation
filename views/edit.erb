@@ -1,29 +1,42 @@
-<div class="col-xs-6 col-md-2">
-</div>
-</div> <!--this DIV must remain for code to work-->
-
 <div id="entry_bg">
 </div>
 
-<div class="col-xs-8 col-sm-6 col-md-6 form_remix">
+<div class="modern-form">
+  <h3>Edit! Or NOT to EDIT?</h3>
+    <form action="/entry/update/<%= @entry.id %>" method="POST">
+    
+    <fieldset class='float-label-field label float'>
+    <label for="title">Title:</label>
+    <input name="title" type="text" class="form-control" value="<%= @entry.title %>">
+    </fieldset>
+    
+    <fieldset class='float-label-field label float'>
+    <label for="comment">Comment:</label><p>
+    <textarea name="message" class="form-control" rows="5" id="comment"><%= @entry.message %></textarea></p>
+    </fieldset>
 
-<div class="signup_contents">
-<form action="/entry/update/<%= @entry.id %>" method="POST">
+    <button type="submit" class="btn_rmx">Submit</button>
+
+    <a href="/dashboard"><button type="button">Back</button></a>
+    
+<!--
+    <fieldset class='float-label-field'>
+      <label for="txtTitle">Title</label>
+      <input id="txtTitle" type='text' name="title">
+    </fieldset>
+
+    <fieldset class='float-label-field'>
+     <div class="title_font">Message</div>
+      <textarea id="txtName" name="message" class="form-control" rows="5" id="comment" ></textarea>
+    </fieldset>
+-->
+   
+    </form>
+</div>
+
+
+
 
 <div class="form-group">
-<label for="title">Title:</label>
-<input name="title" type="text" class="form-control" value="<%= @entry.title %>">
-</div>
-    
-<div class="form-group">
-<label for="comment">Comment:</label>
-<textarea name="message" class="form-control" rows="5" id="comment"><%= @entry.message %></textarea>
-</div>
 
-<p><button type="submit" class="btn btn-primary">Update</button></p>
-    
-</form>
 
-<a href="/dashboard"><button type="button" class="btn btn-success">Back</button></a>
-
-</div>

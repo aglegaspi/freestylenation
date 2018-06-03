@@ -252,7 +252,9 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     -webkit-text-fill-color: rgba(0, 0, 0, 0.54);
     -webkit-text-stroke-color: white;
-    -webkit-text-stroke-width: 2.00px; 
+    -webkit-text-stroke-width: 2.00px;
+    display: flex;
+    justify-content: center;
     }
 
 /* Create two unequal columns that floats next to each other */
@@ -271,10 +273,13 @@ h1 {
 
 /* Fake image */
 .dashboard_fakeimg {
+    text-decoration: none;
+    text-decoration-line: none;
     background-color: #07ffa3;
     width: 100%;
     padding: 20px;
     margin: 5px;
+
 }
 
 /* Add a card effect for articles */
@@ -309,4 +314,103 @@ h1 {
 
 .user_post_mods {
     font-size: 10px;
+}
+
+
+/*-------------------INPUT FIELDS CSS-----------------------*/
+
+.modern-form {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 400px;
+    margin: 30px auto;
+    background-color:  #fff;
+    border: solid 1px #ccc;
+    padding: 20px 10px;
+}
+
+.modern-form h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.float-label-field {
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    outline: none;
+    position: relative;
+    margin: 0 0 20px 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.float-label-field input {
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    outline: none;
+    padding: 5px 5px 8px 0px;
+    width: 100%;
+    font-size: 18px;
+    border-bottom: solid 1px #efefef;
+}
+
+.float-label-field label {
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.5;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    transition: all 0.2s ease;
+    font-size: 18px;
+}
+
+.float-label-field.focus label {
+  color: red;
+}
+.float-label-field.focus input {
+  border-bottom: solid 1px red;
+}
+.float-label-field.float label {
+    font-family: 'Montserrat', sans-serif;
+    opacity: 1;
+    top: -8px;
+    font-size: 60%;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.btn_rmx {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
+.small_text {
+    font-size: 10px;
+}
+
+.entry_txt_size {
+    font-size: 20px;
+}
+
+.title_font {
+    font-family: 'Montserrat', sans-serif;
+}
+
+textarea {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    width: 100%;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
 }
