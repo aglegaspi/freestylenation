@@ -1,121 +1,58 @@
-<div class="col-xs-6 col-md-2">
-<a href="/profile/<%= @user.id %>">
-    <button type="button" class="btn btn-outline-success">Profile</button></a>
-    <a href="/logout"><button type="button" class="btn btn-outline-danger">Log out</button></a>
-</div>
-</div> <!--this DIV must remain for code to work-->
-
-<div id="skrollr-body">
-    <div id="parallax-banner">
+<!-- LAYOUT SOURCE: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_blog_layout-->
  
-        <div class="banner" id="parallax-layer1" data-0="top:0%;" data-804="top:30%;"></div>  
-        <div class="banner" id="parallax-layer2" data-0="top:0%;" data-704="top:20%;"></div> 
-        <div class="banner" id="parallax-layer3"></div> 			
+    <div class="dashboard_header">
+      <h1>FREESTYLE NATION</h1>
+    </div>
 
-    <div class="parallax-overlay">
-    <div class=“contents_forall”>
+    <div class="dashboard_row">
 
-            <div class="col-xs-8 col-sm-6 col-md-6 dashboard_welcome">
-                <h1> <%= @user.first_name %> <small>time for a </small>
-                <a href="/entry/new"><button type="button" class="btn btn-primary">New Post</button></a></h1>
-            </div>
+      <div class="dashboard_leftcolumn">
 
-                <% if @entries.empty? %>
-                <p>
-                If you are not seeing any posts. Contact <a href=“mailto:lex83nyc@gmail.com”>Lex</a> ASAP!
-                </p>		
-                <% else %>
+        <% if @entries.empty? %>
+            <p>
+            If you are not seeing any posts. Contact <a href=“mailto:lex83nyc@gmail.com”>Lex</a> ASAP!
+            </p>		
+        <% else %>
 
-                <h3>Latest Posts</h3>
+           <% @entries.each do |entry| %>
+            <div class="dashboard_card">
+              <h2><%= entry.title %></h2>
+              <h5>Posted by: <%= entry.user.nickname %></h5>
+              <p><%= entry.message %></p>
 
-                        <% @entries.each do |entry| %>
-                            <div class="col-xs-8 col-sm-6 col-md-6 entries_container">
-                                <div class="card">
-                                  <div class="card-header">
-                                    <span class="title_display"><%= entry.title %></span>
-                                  </div>
-                                  <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-
-                                    <p><span class="message_display"><%= entry.message %></span></p>
-
-                                      <footer class="blockquote-footer"><span class="nickname_display"><%= entry.user.nickname %></span></footer>
-                                </blockquote>
-                                  </div>
-                                <!--this checks to see if the user user id matches the post. if so then the user can edit or delete posts-->
-                                <% if entry.user_id == session[:user_id] %>
-                                <div>
-                                <small><a href="/entry/edit/<%= entry.id %>">Edit</a> | <a href="/entry/delete/<%= entry.id %>">Delete</a></small>
-                                </div>
-                                <% end %>
-                                </div>                                
-
-                                
-                                
-<!--
-                                <span class="nickname_display"><%= entry.user.nickname %></span>
-                                    <br>
-                                <span class="title_display"><%= entry.title %></span>
-                                    <br>
-                                <span class="message_display"><%= entry.message %></span>
-                                    
-                                this checks to see if the user user id matches the post. if so then the user can edit or delete posts
-                                <% if entry.user_id == session[:user_id] %>
-                                    <div>
-                                    <small><a href="/entry/edit/<%= entry.id %>">Edit</a>
-                                    | <a href="/entry/delete/<%= entry.id %>">Delete</a></small>
-                                    </div>
-                                 <% end %>
--->
-                                 
-                            </div>
-                        <% end %>
+               <p>
+                <% if entry.user_id == session[:user_id] %>
+                <span class="user_post_mods">
+                <a href="/entry/edit/<%= entry.id %>">Edit</a> | <a href="/entry/delete/<%= entry.id %>">Delete</a>
+                </span>
                 <% end %>
-            </div>
-          
-<!-- Optional: clear the XS cols if their content doesn't match in height -->
-    <div class="row">    
-        <div class="col-xs-8 col-sm-6 col-md-3 form_remix">
-        <!-- empty -->
+              </p>
+              </div>
+            <% end %>
+            <% end %>
+
         </div>
+
+      <div class="dashboard_rightcolumn">
+        <div class="dashboard_card">
+          <h2>Yo <%= @user.nickname %>!</h2>
+            <a href="/entry/new"><div class="dashboard_fakeimg" style="height:100px;">NEW POST</div></a>
+            <a href="/profile/<%= @user.id %>"><div class="dashboard_fakeimg" style="height:100px;">VIEW PROFILE</div></a>
+            <a href="/logout"><div class="dashboard_fakeimg" style="height:100px;">LOGOUT</div></a>
+        </div>
+
+        <div class="dashboard_card">
+          <h3>Stop Look and Listen!</h3>
+            <iframe src="https://open.spotify.com/embed/user/22nhuzmvmkyfkyyipwcf7dtpi/playlist/78KY9LdO6VnyUaxSrCsTKi" width="300" height="680" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+
+        <div class="dashboard_card">
+          <h3>Jam of the Day</h3>
+          <p><img src="/images/artwork/lisa_lisa_-_i_wonder_if.jpg" alt="" style="width: 300px;"></p>
+        </div>
+      </div>
     </div>
 
-
-            </div>
-        </div>
+    <div class="dashboard_footer">
+      <h2>Dedicated to all the Freestyle fans.</h2>
     </div>
-
-<!-- This is the area below the Parallax/Skrollr -->
-
-<div class="post_parallax">
-   
-    <iframe src="https://open.spotify.com/embed/user/22nhuzmvmkyfkyyipwcf7dtpi/playlist/78KY9LdO6VnyUaxSrCsTKi" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    
-    <br>
-    brf
-    <br>
-    brrr
-        <br>
-    brf
-    <br>
-    brrr
-        <br>
-    brf
-    <br>
-    brrr
-        <br>
-    brf
-    <br>
-    brrr
-        <br>
-    brf
-    <br>
-    brrr
-    
-        <br>
-    brf
-    <br>
-    brrr
-</div>
-
-

@@ -1,4 +1,4 @@
-.header {
+.header_first {
   background-color: #f0ad4e;
 }
 
@@ -218,4 +218,95 @@ overflow: scroll;
 
 .entries_container {
     margin: 30px;
+}
+
+
+/* --------------STYLING FOR THE DASHBOARD--------------------- */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Libre Baskerville', serif;
+}
+
+/* Add a gray background color with some padding */
+body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.dashboard_header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+    background-image: url(images/dashboard_header_bg.jpg);
+    background-position: unset;
+    background-clip: unset;
+    background-repeat: space;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.54);
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 2.00px; 
+    }
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.dashboard_leftcolumn {   
+    float: left;
+    width: 70%;
+}
+
+/* Right column */
+.dashboard_rightcolumn {
+    float: left;
+    width: 30%;
+    padding-left: 20px;
+}
+
+/* Fake image */
+.dashboard_fakeimg {
+    background-color: #07ffa3;
+    width: 100%;
+    padding: 20px;
+    margin: 5px;
+}
+
+/* Add a card effect for articles */
+.dashboard_card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.dashboard_row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+.dashboard_footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .dashboard_leftcolumn, .dashboard_rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.user_post_mods {
+    font-size: 10px;
 }

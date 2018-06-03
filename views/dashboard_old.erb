@@ -1,0 +1,123 @@
+<div class="container-fluid cont_rmx">
+    <div class="row header">
+        <div class="col-xs-12 col-sm-6 col-md-10"><h1 class="larger_font">Freestyle Nation</h1></div>
+            
+<div class="col-xs-6 col-md-2">
+<a href="/profile/<%= @user.id %>">
+    <button type="button" class="btn btn-outline-success">Profile</button></a>
+    <a href="/logout"><button type="button" class="btn btn-outline-danger">Log out</button></a>
+</div>
+</div> <!--this DIV must remain for code to work-->
+
+<div id="skrollr-body">
+    <div id="parallax-banner">
+ 
+        <div class="banner" id="parallax-layer1" data-0="top:0%;" data-804="top:30%;"></div>  
+        <div class="banner" id="parallax-layer2" data-0="top:0%;" data-704="top:20%;"></div> 
+        <div class="banner" id="parallax-layer3"></div> 			
+
+    <div class="parallax-overlay">
+    <div class=“contents_forall”>
+
+        <div class="col-xs-8 col-sm-6 col-md-6 dashboard_welcome">
+            <h1> <%= @user.first_name %> <small>time for a </small>
+            <a href="/entry/new"><button type="button" class="btn btn-primary">New Post</button></a></h1>
+            </div>
+
+                <% if @entries.empty? %>
+                <p>
+                If you are not seeing any posts. Contact <a href=“mailto:lex83nyc@gmail.com”>Lex</a> ASAP!
+                </p>		
+                <% else %>
+
+                <h3>Latest Posts</h3>
+
+                    <% @entries.each do |entry| %>
+                        <div class="col-xs-8 col-sm-6 col-md-6 entries_container">
+                            <div class="card">
+                                 
+                              <div class="card-header">
+                                <span class="title_display">
+                                
+                                <%= entry.title %>
+                                
+                                </span>
+                              </div>
+                                  
+                              <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                <p><span class="message_display">
+                                
+                                <%= entry.message %>
+                                
+                                </span></p>
+                                <footer class="blockquote-footer">
+                                <span class="nickname_display">
+                                
+                                <%= entry.user.nickname %>
+                                
+                                </span></footer>
+                                </blockquote>
+                                </div>
+                                
+                                <!--this checks to see if the user user id matches the post. if so then the user can edit or delete posts-->
+                                
+                                <% if entry.user_id == session[:user_id] %>
+                                    <div>
+                                    <small><a href="/entry/edit/<%= entry.id %>">Edit</a> | <a href="/entry/delete/<%= entry.id %>">Delete</a></small>
+                                    </div>
+                                <% end %>
+                                
+                                </div>                                   
+                            </div>
+                        <% end %>
+                <% end %>
+            </div>
+          
+<!-- Optional: clear the XS cols if their content doesn't match in height -->
+    <div class="row">    
+        <div class="col-xs-8 col-sm-6 col-md-3 form_remix">
+        <!-- empty -->
+        </div>
+    </div>
+
+
+            </div>
+        </div>
+</div>
+
+<!-- This is the area below the Parallax/Skrollr -->
+
+
+<div class="post_parallax">
+   
+    <iframe src="https://open.spotify.com/embed/user/22nhuzmvmkyfkyyipwcf7dtpi/playlist/78KY9LdO6VnyUaxSrCsTKi" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    
+    <br>
+    brf
+    <br>
+    brrr
+        <br>
+    brf
+    <br>
+    brrr
+        <br>
+    brf
+    <br>
+    brrr
+        <br>
+    brf
+    <br>
+    brrr
+        <br>
+    brf
+    <br>
+    brrr
+    
+        <br>
+    brf
+    <br>
+    brrr
+</div>
+
+
