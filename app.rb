@@ -184,6 +184,11 @@ enable :sessions
             redirect '/'
         end
 
+        get '/freestyle' do
+            
+            erb :freestyle
+        end
+
 
         get '/logout' do
             session[:user_id] = nil
