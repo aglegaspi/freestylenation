@@ -2,6 +2,10 @@
   background-color: #f0ad4e;
 }
 
+.larger_font {
+    font-size: 80px;
+}
+
 .cont_rmx {
     margin: 0;
     padding: 0;
