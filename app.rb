@@ -5,27 +5,33 @@ require './models'
 set :session_secret, ENV['RUMBLR_SESSION_SECRET']
 enable :sessions
 
-    #this method checks if user is logged in or not then directs accordingly
+    #this method calls the root page and executes
         get '/' do
+            #checks if the user is logged in
             if session[:user_id]
+                #when true the user is redirected to dashboard
                 redirect '/dashboard'
             else
+                #when not true the user is sent to the login page
                 redirect '/login'
             end
         end
 
-    #the sign up page
+    #this method calls the signup page and executes
         get('/signup') do
+            #loads the embeded ruby file called sign up
             erb :signup
         end
 
-    #this method check if user is signed in 
+    #this post method is called on signup and executes
         post('/signup') do
+            #we create a variable that finds the current users email
             existing_user = User.find_by(email: params[:email])
+            #if the variable has value then they're redirected to login
             if existing_user != nil
                 return redirect '/login'
             end
-
+            #we create a variable instance of User with all the values submitted.
             user = User.create(
                 first_name: params[:first_name],
                 last_name: params[:last_name],
@@ -33,26 +39,31 @@ enable :sessions
                 email: params[:email],
                 password: params[:password],
             )
+            #then we assign the user's id to the session id and redirect.
             session[:user_id] = user.id
             redirect '/dashboard'
         end
 
-
+        #this method for login and executes
         get('/login') do 
+            #if the user is logged in we automatically send them to the dashboard
             if session[:user_id] == true
                 return redirect '/dashboard'
             end
+            #if not they will see contents of the login embed ruby
             erb :login	
         end
 
-
+        #this mthod call the login and executes
         post('/login') do
+            #we create a variable instance of the current users email
             user = User.find_by(email: params[:email])
+            #then we check to see if it has a value if not then they're sent to login
             if user.nil?
                 puts "Invalid UN: #{params[:email]}"
                 return redirect '/login'
             end
-
+            #    
             unless user.password == params[:password]
                 puts "Invalid PW: #{params[:password]}, expected: #{user.password}"
                 return redirect '/login'
