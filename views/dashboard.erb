@@ -13,28 +13,27 @@
             If you are not seeing any posts. Contact <a href=“mailto:lex83nyc@gmail.com”>Lex</a> ASAP!
             </p>		
         <% else %>
-
-           <% @entries.each do |entry| %>
+          <% @entries.each do |entry| %>
             <div class="dashboard_card">
               <h3 class="title_color"><%= entry.title %></h3>
               <p class="entry_txt_size"><%= entry.message %></p>
                 <h5>Posted by <%= entry.user.nickname %></h5>
-               <p>
+              <p>
                 <% if entry.user_id == session[:user_id] %>
-                <span class="user_post_mods">
-                <a href="/entry/edit/<%= entry.id %>">Edit</a> | <a href="/entry/delete/<%= entry.id %>">Delete</a>
-                </span>
+                  <span class="user_post_mods">
+                  <a href="/entry/edit/<%= entry.id %>">Edit</a> | <a href="/entry/delete/<%= entry.id %>">Delete</a>
+                  </span>
                 <% end %>
               </p>
-              </div>
-            <% end %>
-            <% end %>
-
-        </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
 
       <div class="dashboard_rightcolumn">
         <div class="dashboard_card">
           <h2>Yo <%= @user.nickname %>!</h2>
+            <!-- Do not use inline styles like this style="height:100px;". This should be in the css file -->
             <a href="/entry/new"><div class="dashboard_fakeimg" style="height:100px;">NEW POST</div></a>
             <a href="/profile/<%= @user.id %>"><div class="dashboard_fakeimg" style="height:100px;">VIEW PROFILE</div></a>
             <a href="/logout"><div class="dashboard_fakeimg" style="height:100px;">LOGOUT</div></a>
