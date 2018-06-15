@@ -2,25 +2,22 @@
 <div id="entry_bg">
 </div>
 
-
- 
-        
 <div class="modern-form">
   <h3>New Post. Make It Sweet!</h3>
 
-    <form action="/entry/create" method="POST"> 
-    
-    <fieldset class='float-label-field'>
-      <label for="txtTitle">Title</label>
-      <input id="txtTitle" type='text' name="title">
-    </fieldset>
+    <form action="/entry/create" method="POST">
+      <!-- fieldset is used when you want to group multiple inputs https://www.w3schools.com/tags/tag_fieldset.asp -->
+      <fieldset class='float-label-field'>
+        <label for="txtTitle">Title</label>
+        <input id="txtTitle" type='text' name="title">
+      </fieldset>
 
-    <fieldset class='float-label-field'>
-     <div class="title_font">Message</div>
-      <textarea id="txtName" name="message" class="form-control" rows="5" id="comment" ></textarea>
-    </fieldset>
+      <fieldset class='float-label-field'>
+       <div class="title_font">Message</div>
+        <textarea id="txtName" name="message" class="form-control" rows="5" id="comment" ></textarea>
+      </fieldset>
 
-   <button type="submit" class="btn_rmx">Submit</button>
+      <button type="submit" class="btn_rmx">Submit</button>
     </form>
     <a href="/dashboard"><button type="button">Back</button></a>
 </div>
